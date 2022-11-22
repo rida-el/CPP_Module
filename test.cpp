@@ -1,25 +1,22 @@
-// inner block scopes
+// classes example
 #include <iostream>
 using namespace std;
 
-int main()
-{
-	int x = 10;
-	int y = 20;
-	{
-		int x;	// ok, inner scope.
-		x = 50; // sets value to inner x
-		y = 50; // sets value to (outer) y
-		cout << "inner block:\n";
-		cout << "x: " << x << '\n';
-		cout << "y: " << y << '\n';
-	}
-	{
-		y = 12;
-		cout << "y : " << y << endl;
-	}
-	cout << "outer block:\n";
-	cout << "x: " << x << '\n';
-	cout << "y: " << y << '\n';
-	return 0;
+class Rectangle {
+    int width, height;
+  public:
+    void set_values (int,int);
+    int area() {return width*height;}
+};
+
+void Rectangle::set_values (int x, int y) {
+  width = x;
+  height = y;
+}
+
+int main () {
+  Rectangle rect;
+  rect.set_values (1,4);
+  cout << "area: " << rect.area();
+  return 0;
 }
