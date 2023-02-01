@@ -1,18 +1,18 @@
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef PHONE_BOOK_HPP
+# define PHONE_BOOK_HPP
 
-# include  "Contact.hpp"
+#include  "./Contact.hpp"
+#include <string.h>
 
 class PhoneBook
 {
 private :
-    Contact contact[8];
+    Contact contacts[8];
 public :	
     PhoneBook();
-    void ADD(std::string *info, int id);
+    void ADD(std::string *contactInfo, int index);
 	void SEARCH(int id);
     void EXIT();
-    int max_contact_number;
 };
 
 #endif
