@@ -1,7 +1,7 @@
 
 
-#include "./PhoneBook.hpp"
-#include "./Contact.hpp"
+#include "./phoneBook.hpp"
+#include "./contact.hpp"
 
 void displayCommands()
 {

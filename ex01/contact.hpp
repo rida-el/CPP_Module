@@ -18,6 +18,7 @@ class Contact
     std::string darkestSecret;
     unsigned int phoneNumber;
     public:
+        Contact();
 	    Contact(std::string firstName, std::string lastName, std::string nickname, std::string darkestSecret, std::string phoneNumber);
         void    display();
 	    void	displayContact(int id);

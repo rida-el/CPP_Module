@@ -5,8 +5,8 @@ CC			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 
-SRC			= 	./Contact.cpp \
-				./PhoneBook.cpp \
+SRC			= 	./contact.cpp \
+				./phoneBook.cpp \
 				./main.cpp
 
 OBJ			=	$(SRC:%.cpp=%.o)

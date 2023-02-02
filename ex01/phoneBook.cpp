@@ -1,9 +1,9 @@
 // #include <iostream>
-#include "./PhoneBook.hpp"
+#include "./phoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
-	// std::cout << "default constracted called" << std::endl;
+	std::cout << "default constracted called" << std::endl;
 }
 
 void PhoneBook::EXIT()
