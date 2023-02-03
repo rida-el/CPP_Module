@@ -12,17 +12,23 @@
 
 class Contact
 {
-    std::string firstName;
-    std::string lastName;
-    std::string nickName;
-    std::string darkestSecret;
-    unsigned int phoneNumber;
+    // std::string firstName;
+    // std::string lastName;
+    // std::string nickName;
+    // std::string darkestSecret;
+    // unsigned int phoneNumber;
+    std::string _firstName;
+	std::string _lastName;
+	std::string _nickname;
+	std::string _darkestSecret;
+	std::string _phoneNumber;
     public:
         Contact();
 	    Contact(std::string firstName, std::string lastName, std::string nickname, std::string darkestSecret, std::string phoneNumber);
         void    display();
-	    void	displayContact(int id);
-	    void	displayFullContact(int id);
+	    void	displayColumns(int id);
+	    void	displaySingleContact(int id);
+        ~Contact();
 };
 
 #endif

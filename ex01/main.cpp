@@ -1,7 +1,7 @@
 
 
-#include "./phoneBook.hpp"
-#include "./contact.hpp"
+#include "phoneBook.hpp"
+#include "contact.hpp"
 
 void displayCommands()
 {
@@ -31,7 +31,6 @@ int main()
     fields_assignement(fields);
     while (1)
     {
-        std::cout << "sss";
         getline(std::cin, cmd);
         if (cmd == "EXIT")
             contact.EXIT();
@@ -47,7 +46,11 @@ int main()
             }
             contact.ADD(contactInfo, index % 8);
             index++;
-            std::cout << RED << contactInfo[2] << RESET << std::endl;
+            // std::cout << RED << contactInfo[2] << RESET << std::endl;
+        }
+        else if(cmd.compare("SEARCH") == 0)
+        {
+            contact.SEARCH(index);
         }
         else
             std::cout << RED << "ERROR:" << RESET << "Select the command from the list :"<<std::endl;
