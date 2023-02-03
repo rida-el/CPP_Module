@@ -14,7 +14,6 @@ void displayTableHeader(void)
 
 PhoneBook::PhoneBook()
 {
-	std::cout << "default constracted called" << std::endl;
 }
 
 void PhoneBook::EXIT()
@@ -43,19 +42,19 @@ void PhoneBook::SEARCH(int id)
 	id > 8 ? id = 8 : id;
 	while (i < id)
 	{
-		contacts[i].displayColumns(i);
+		contacts[i].AllColumns(i);
 		i++;
 	}
 	std::cout << "*-------------------------------------------*" << '\n';
 	while (true)
 	{
-		std::cout << "Please enter a valid Contact ID: >= 1 && <=" << id << '\n';
-		if (getline(std::cin, userId, '\n').eof() == true)
+		std::cout << "Please enter a valid Contact Id" << '\n';
+		if (getline(std::cin, userId).eof() == true)
 			exit(1);
 		std::stringstream(userId) >> entredId;
 		if (entredId >= 1 && entredId <= id)
 		{
-			contacts[entredId - 1].displaySingleContact(entredId - 1);
+			contacts[entredId - 1].SingleContact(entredId - 1);
 			break;
 		}
 	}

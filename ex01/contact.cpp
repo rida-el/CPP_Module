@@ -1,45 +1,42 @@
 #include "contact.hpp"
 
-Contact::Contact(/* args */)
+Contact::Contact()
 {
 }
 
 Contact::Contact(std::string firstName, std::string lastName, std::string nickName, std::string darkestSecret, std::string phoneNumber)
 {
-	_firstName = firstName;
-	_lastName = lastName;
-	_nickname = nickName;
-	_darkestSecret = darkestSecret;
-	_phoneNumber = phoneNumber;
+	first_Name = firstName;
+	last_Name = lastName;
+	nick_Name = nickName;
+	darkest_Secret = darkestSecret;
+	phone_Number = phoneNumber;
 }
 
-Contact::~Contact()
-{	
-} 
 std::string checkInfoLen(std::string str)
 {
 	if (str.length() < 10)
 		return (str);
 	else
-		return (str);
+		return (str.substr(0, 9).append("."));
 }
 
-void Contact::displayColumns(int id)
+void Contact::AllColumns(int id)
 {
 	std::cout << "|" << std::right << std::setw(10) << id + 1
-			  << "|" << std::right << std::setw(10) << _firstName
-			  << "|" << std::right << std::setw(10) << _lastName
-			  << "|" << std::right << std::setw(10) << _nickname << "|" << '\n';
+			  << "|" << std::right << std::setw(10) << checkInfoLen(first_Name) 
+			  << "|" << std::right << std::setw(10) << checkInfoLen(last_Name) 
+			  << "|" << std::right << std::setw(10) << checkInfoLen(nick_Name)  << "|" << '\n';
 }
 
-void Contact::displaySingleContact(int id)
+void Contact::SingleContact(int id)
 {
 	std::cout << "*___________________________________________*" << '\n';
 	std::cout << "*               CONTACT INFO                *" << '\n';
 	std::cout << "*___________________________________________*" << '\n';
 	std::cout << std::right << std::setw(10) << "index        :" << id + 1 << '\n'
-			  << std::right << std::setw(10) << "firstName    :" << _firstName << '\n'
-			  << std::right << std::setw(10) << "lastName     :" << _lastName << '\n'
-			  << std::right << std::setw(10) << "nickName     :" << _nickname << '\n'
-			  << std::right << std::setw(10) << "phoneNumber  :" << _phoneNumber << '\n';
+			  << std::right << std::setw(10) << "firstName    :" << first_Name << '\n'
+			  << std::right << std::setw(10) << "lastName     :" << last_Name << '\n'
+			  << std::right << std::setw(10) << "nickName     :" << nick_Name << '\n'
+			  << std::right << std::setw(10) << "phoneNumber  :" << phone_Number << '\n';
 }

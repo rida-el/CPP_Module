@@ -46,7 +46,6 @@ int main()
             }
             contact.ADD(contactInfo, index % 8);
             index++;
-            // std::cout << RED << contactInfo[2] << RESET << std::endl;
         }
         else if(cmd.compare("SEARCH") == 0)
         {
