@@ -32,6 +32,8 @@ int main()
     while (1)
     {
         getline(std::cin, cmd);
+        if (std::cin.eof())
+            exit (0);
         if (cmd == "EXIT")
             contact.EXIT();
         else if (cmd.compare("ADD") == 0)
@@ -40,8 +42,14 @@ int main()
             std::cout << "add the contact" << std::endl;
             while (i < 5)
             {
-                std::cout << fields[i];
-                getline(std::cin, contactInfo[i]);
+                contactInfo[i] = "";
+                while ((contactInfo[i].empty() || contactInfo[i] == "\n"))
+                {
+                    std::cout << fields[i];
+                    getline(std::cin, contactInfo[i]);
+                    if (std::cin.eof())
+                        exit (0);
+                }
                 i++;
             }
             contact.ADD(contactInfo, index % 8);

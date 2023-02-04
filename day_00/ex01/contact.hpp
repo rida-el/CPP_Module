@@ -12,11 +12,12 @@
 
 class Contact
 {
-    std::string first_Name;
-	std::string last_Name;
-	std::string nick_Name;
-	std::string darkest_Secret;
-	std::string phone_Number;
+	private:
+ 		std::string first_Name;
+		std::string last_Name;
+		std::string nick_Name;
+		std::string darkest_Secret;
+		std::string phone_Number;
     public:
         Contact();
 	    Contact(std::string firstName, std::string lastName, std::string nickname, std::string darkestSecret, std::string phoneNumber);
