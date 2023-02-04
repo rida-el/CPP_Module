@@ -53,8 +53,6 @@ int main()
         }
         else
             std::cout << RED << "ERROR:" << RESET << "Select the command from the list :"<<std::endl;
-
-        }
-    
+    }
     return (0);
 }
