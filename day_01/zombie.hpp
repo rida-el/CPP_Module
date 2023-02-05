@@ -1,16 +1,14 @@
+#include <string>
+#include <iostream>
 class zombie
 {
 private:
-    /* data */
+    std::string name;
 public:
-    zombie(/* args */);
+    zombie();
+    zombie(std::string _name);
     ~zombie();
+    void announce( void );
+    void randomChump( std::string name );
 };
 
-zombie::zombie(/* args */)
-{
-}
-
-zombie::~zombie()
-{
-}
