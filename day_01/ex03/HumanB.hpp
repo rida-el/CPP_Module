@@ -6,6 +6,8 @@ private:
     std::string name;
     Weapon *weapon;
 public:
-    HumanB(/* args */);
+    HumanB(std::string str);
     ~HumanB();
+    void attack();
+    void setWeapon(Weapon &weapon_ptr);
 };

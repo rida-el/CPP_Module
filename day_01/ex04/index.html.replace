@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>ex04</title>
+    </head>
+
+    <body>
+        <reda>ex04</reda>
+        <p>Today is
+            <?php echo date("l"); ?>.
+        </p>
+
+</html>
