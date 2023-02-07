@@ -17,12 +17,3 @@ zombie::~zombie()
 {
     std::cout <<name << " is dead." << std::endl;
 }
-
-int main()
-{
-    zombie *zombie2 = new zombie("rida2");
-    zombie2->announce();
-    delete zombie2;
-
-    return 0;
-}

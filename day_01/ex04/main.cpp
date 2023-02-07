@@ -13,7 +13,7 @@ int main(int ac, char **av)
         std::string s2 = av[3];
         std::ifstream file(fileName);
 
-        if (file.is_open())
+        if (file.is_open() && s1 != "" && s2 != "" )
         {
             // std::ifstream copy(file);
             std::string line;
@@ -22,7 +22,7 @@ int main(int ac, char **av)
             std::ofstream newfile(fileName + ".replace");
             if (newfile.is_open())
             {
-                while (line.find(s1) != std::string::npos)
+                while (line.find(s1) != std::string::npos && s1 != s2)
                 {
                     line.replace(line.find(s1), s1.length(), s2);
                 }
@@ -36,7 +36,7 @@ int main(int ac, char **av)
         }
         else
         {
-            std::cout << "Unable to open file" << std::endl;
+            std::cout << "Unable to open file or invalide args" << std::endl;
         }
     }
     else if(ac > 4)
