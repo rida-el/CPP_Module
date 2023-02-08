@@ -10,7 +10,7 @@ Harl::~Harl()
 
 void Harl::debug(void)
 {
-    std::cout << "\33[0;32m[DEBUG]\33[0m" << std::endl;
+    std::cout << "\33[0;32m[DEBUGaa]\33[0m" << std::endl;
     std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
 }
 

@@ -7,6 +7,7 @@ HumanB::HumanB(std::string str)
 
 HumanB::~HumanB()
 {
+    std::cout << "HumanB destructor called" << std::endl;
 }
 
 void HumanB::attack()
