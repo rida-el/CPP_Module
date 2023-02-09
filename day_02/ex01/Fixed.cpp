@@ -44,8 +44,6 @@ Fixed::~Fixed()
 Fixed &Fixed::operator=(const Fixed &c)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	// if (this == &c)
-	// 	return *this;
 	this->fixed_point_value = c.fixed_point_value;
 	return *this;
 }

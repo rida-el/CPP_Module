@@ -18,10 +18,10 @@ Fixed::Fixed(const Fixed &copy)
     *this = copy;
 }
 
-Fixed &Fixed::operator=(const Fixed &copy)
+Fixed &Fixed::operator=(const Fixed &obj)
 {
     std::cout << "Assignation operator called" << std::endl;
-    this->fixed_point_value = copy.getRawBits();
+    this->fixed_point_value = obj.getRawBits();
     return *this;
 }
 

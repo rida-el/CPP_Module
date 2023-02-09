@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 
+// *****************Orthodox Canonical*****************
 
 Fixed::Fixed(/* args */)
 {
@@ -24,6 +25,42 @@ Fixed &Fixed::operator=(const Fixed &c)
     fixed_point_value = c.getRawBits();
     return *this;
 }
+
+int Fixed::getRawBits()const
+{
+    return this->fixed_point_value;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+    this->fixed_point_value = raw;
+}
+
+Fixed::Fixed(const int value)
+{
+	std::cout << "Int constructor called" << std::endl;
+    this->fixed_point_value = value << this->fractional_bits;
+}
+
+
+Fixed::Fixed(const float fvalue)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->fixed_point_value = fvalue * 256;
+}
+
+float	Fixed::toFloat(void) const
+{
+	float res = (float)fixed_point_value / 256;
+	return (res);
+}
+
+int		Fixed::toInt(void) const
+{
+	return (fixed_point_value >> fractional_bits);
+}
+
+// ****************comparison operators****************
 
 bool Fixed::operator>(const Fixed &c) const
 {
@@ -55,6 +92,8 @@ bool Fixed::operator!=(const Fixed &c) const
     return fixed_point_value != c.getRawBits();
 }
 
+// ****************arithmetic operators****************
+
 Fixed Fixed::operator+(const Fixed &c) const
 {
     return Fixed(toFloat() + c.toFloat());
@@ -74,6 +113,10 @@ Fixed Fixed::operator/(const Fixed &c) const
 {
     return Fixed(toFloat() / c.toFloat());
 }
+
+
+// ****************increment operators****************
+
 
 Fixed &Fixed::operator++()
 {
@@ -100,6 +143,8 @@ Fixed Fixed::operator--(int)
     operator--();
     return tmp;
 }
+
+
 
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
