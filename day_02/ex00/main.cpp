@@ -6,10 +6,8 @@ int main()
     Fixed b(a);
     Fixed c;
     c = a;
-    // std::cout << a.getRawBits() << std::endl;
-    // std::cout << b.getRawBits() << std::endl;
-    // std::cout << a.getOop() << std::endl;
-    // std::cout << b.getOop() << std::endl;
-    std::cout << a << std::endl;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
     return 0;
 }
