@@ -13,6 +13,7 @@ public:
     Brain(/* args */);
     ~Brain();
     Brain(const Brain &copy);
+    Brain &operator=(const Brain &copy);
 };
 
 

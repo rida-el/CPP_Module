@@ -11,6 +11,7 @@ Dog::Dog(/* args */)
 Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
+    delete brain2;
 }
 
 Dog::Dog(const Dog &copy)
@@ -23,7 +24,12 @@ Dog &Dog::operator=(const Dog &copy)
 {
     std::cout << "Dog assignation operator called" << std::endl;
     if (this != &copy)
+    {
+        Brain *temp = new Brain;
+        *temp = *(copy.brain2);
+        this->brain2 = temp;
         this->type = copy.type;
+    }
     return (*this);
 }
 
