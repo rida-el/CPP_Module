@@ -6,7 +6,7 @@ Bureaucrat::Bureaucrat(/* args */)
     std::cout << "Bureaucrat constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string const _name, int grade) : name(_name)
+Bureaucrat::Bureaucrat(std::string const &name, int grade) : name(name)
 {
     std::cout << "Bureaucrat constructor called" << std::endl;
     if (grade < 1)
@@ -36,7 +36,6 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other)
     {
         this->grade = other.grade;
     }
-
     return *this;
 }
 
@@ -58,7 +57,6 @@ void Bureaucrat::incrementGrade()
     {
         throw Bureaucrat::GradeTooHighException();
     }
-
 }
 
 void Bureaucrat::decrementGrade()

@@ -1,0 +1,18 @@
+// what() is a virtual function of the std::exception class in C++.
+// It returns a C-style character string that describes the exception.
+// The purpose of the what() function is to provide a descriptive
+// message that can be used to identify the type of the exception and the reason
+// for the exception.
+
+// In the code example you provided, the what() function is overridden
+// by the GradeTooHighException and GradeTooLowException classes.
+// These two classes are used to handle exceptions that may occur when the grade
+// of a bureaucrat is out of a valid range. By providing a descriptive message
+// using the what() function, these classes make it easier for the programmer 
+// to identify the type of the exception and take appropriate action to handle it.
+
+// For example, if an instance of the GradeTooHighException class is thrown,
+// the programmer can catch the exception and call the what()
+// function to retrieve the error message. The error message could be something
+// like "Bureaucrat grade is too high!", which provides a clear
+// indication of what went wrong and why.
