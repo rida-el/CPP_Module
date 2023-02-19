@@ -18,7 +18,7 @@ class AForm
 
     public:
         AForm(/* args */);
-        ~AForm();
+        virtual ~AForm() = 0;
         AForm(std::string name , int gradeToSign, int gradeToExecute);
         AForm(AForm const &other);
         AForm &operator=(AForm const &other);

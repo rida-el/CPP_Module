@@ -5,10 +5,10 @@
 #include "PresidentialPardonForm.hpp"
 
 
-void leak()
-{
-	system("leaks Bureaucrat");
-}
+// void leak()
+// {
+// 	system("leaks Bureaucrat");
+// }
 
 int main()
 {
@@ -17,6 +17,6 @@ int main()
 
 	rrf = someRandomIntern.makeForm("presidential pardon", "home");
 	delete rrf;
-	atexit(leak);
+	// atexit(leak);
 	return (0);
 }
