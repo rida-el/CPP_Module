@@ -16,7 +16,7 @@ private:
 public:
     Bureaucrat(/* args */);
     ~Bureaucrat();
-    Bureaucrat(std::string const name, int grade);
+    Bureaucrat(std::string const &name, int grade);
     Bureaucrat(Bureaucrat const &other);
     Bureaucrat &operator=(Bureaucrat const &other);
     std::string const &getName() const;

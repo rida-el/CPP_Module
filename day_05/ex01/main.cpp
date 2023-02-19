@@ -9,7 +9,7 @@ int main()
 	try {
 
 		Bureaucrat b1("lmodir", 10);
-		// b1.decrementGrade();
+		b1.decrementGrade();
 		Form f1("f1", 10, 10);
 		b1.signForm(f1);
 	}
