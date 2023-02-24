@@ -6,7 +6,7 @@
 /*   By: rel-maza <rel-maza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:58:04 by rel-maza          #+#    #+#             */
-/*   Updated: 2023/02/24 00:02:25 by rel-maza         ###   ########.fr       */
+/*   Updated: 2023/02/24 20:39:44 by rel-maza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 void leak()
 {
-	system("leaks a.out");
+	system("leaks Array");
 }
 
-#define MAX_VAL 100
+#define MAX_VAL 150
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -50,7 +50,8 @@ int main(int, char**)
     }
     try
     {
-        numbers[-100] = 0;
+        numbers[-2] = 0;
+        std::cout << numbers[1] << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -69,7 +70,7 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
     // atexit(leak);
     return 0;
 }
