@@ -15,27 +15,29 @@
 
 void leak()
 {
-	system("leaks Array");
+	system("leaks a.out");
 }
 
-
-
-#define MAX_VAL 750
+#define MAX_VAL 100
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
+
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
     }
+
     //SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
+        // std::cout << "size of tmp: " << tmp.size() << std::endl;
+        // std::cout << "size of test: " << test.size() << std::endl;
     }
 
     for (int i = 0; i < MAX_VAL; i++)
@@ -48,7 +50,7 @@ int main(int, char**)
     }
     try
     {
-        numbers[2] = 0;
+        numbers[-100] = 0;
     }
     catch(const std::exception& e)
     {

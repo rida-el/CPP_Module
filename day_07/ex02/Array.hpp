@@ -23,27 +23,39 @@ class Array
         unsigned int N;
         T *arr;
     public:
-        Array() : N(0), arr(NULL) {}
-        Array(unsigned int n) : N(n), arr(new T[n]) {}
-        Array(Array const & src) : N(src.N), arr(new T[src.N]) {
-            for (unsigned int i = 0; i < src.N; i++)
-                this->arr[i] = src.arr[i];
+        Array(){
+            this->N = 0;
+            this->arr = NULL;
+        }
+        Array(unsigned int n){
+            this->N = n;
+            this->arr = new T[n];
+        }
+        Array(Array const & src){
+            *this = src;
         }
         ~Array() { delete [] this->arr; }
         Array & operator=(Array const & src){
             if (this != &src)
             {
-                delete [] this->arr;
                 this->N = src.N;
-                this->arr = new T[src.N];
-                for (unsigned int i = 0; i < src.N; i++)
+                this->arr = new T[this->N];
+                for (unsigned int i = 0; i < this->N; i++)
                     this->arr[i] = src.arr[i];
             }
             return *this;
         }
+        class OutOfLimitsException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw()
+                {
+                    return "Out of limits";
+                }
+        };
         T & operator[](unsigned int i){
-            if (i >= this->N)
-                throw std::exception();
+            if (this->N <= i || i < 0)
+                throw OutOfLimitsException();
             return this->arr[i];
         }
         unsigned int size() const { return this->N; }
