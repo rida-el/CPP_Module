@@ -4,15 +4,20 @@
 #include <exception>
 #include <iterator>
 
-template <typename T>
+std::string error()
+{
+    return("std::cout <<<< std::endl");
+}
 
+template <typename T>
 int easyfind(T &container, int n)
 {
     typename T::iterator it;
     it = std::find(container.begin(), container.end(), n);
     if (it == container.end())
-        throw std::exception();
+        throw "error";
     return *it;
 }
+
 
 
